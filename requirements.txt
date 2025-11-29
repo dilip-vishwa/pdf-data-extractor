@@ -1,0 +1,13 @@
+streamlit
+langchain
+langchain-openai
+langchain-community
+langchain-classic
+langchain-huggingface
+langchain-chroma
+chromadb
+pymupdf
+python-dotenv
+torch --index-url https://download.pytorch.org/whl/cpu
+sentence-transformers
+openpyxl
