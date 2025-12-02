@@ -37,5 +37,5 @@ def convert_excel_to_csv_by_parsing_cells_by_rows_and_columns(file_path):
 
 
 if __name__ == "__main__":
-    file_path = "/home/adming/project/find_excel_data_fill_label/SPECIFICATION_SUMMARY_SHEET-BLANK.xlsx" 
+    file_path = "/home/adming/project/pdf-data-extractor/dataset/SPECIFICATION_SUMMARY_SHEET-BLANK.xlsx" 
     convert_excel_to_csv_by_parsing_cells_by_rows_and_columns(file_path)

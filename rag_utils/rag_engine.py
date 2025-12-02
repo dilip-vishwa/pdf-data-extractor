@@ -7,8 +7,7 @@ from langchain_chroma import Chroma
 from langchain_openai import ChatOpenAI
 from langchain_classic.chains import create_retrieval_chain
 from langchain_classic.chains.combine_documents import create_stuff_documents_chain
-from langchain_core.prompts import ChatPrompt
-Template
+from langchain_core.prompts.chat import ChatPromptTemplate
 
 load_dotenv()
 
@@ -26,7 +25,8 @@ def load_and_process_pdf(pdf_path):
     text_splitter = RecursiveCharacterTextSplitter(
         chunk_size=1000,
         chunk_overlap=200,
-        add_start_index=True
+        add_start_index=True,
+        separators=["[PAGE_BREAK]", "\n\n", "\n", " ", ""]
     )
     chunks = text_splitter.split_documents(documents)
     return chunks
@@ -58,18 +58,21 @@ def get_rag_chain(vectorstore):
     llm = ChatOpenAI(
         openai_api_key=os.getenv("OPENROUTER_API_KEY"),
         openai_api_base="https://openrouter.ai/api/v1",
-        model_name="openai/gpt-oss-20b:free", # Using a good default, can be changed
+        model_name="openai/gpt-oss-20b:free",
+        # model_name="x-ai/grok-4.1-fast:free",
         temperature=0
     )
 
-    retriever = vectorstore.as_retriever(search_type="similarity", search_kwargs={"k": 5})
+    retriever = vectorstore.as_retriever(search_type="similarity", search_kwargs={"k": 10})
 
     system_prompt = (
-        "You are an assistant for question-answering tasks. "
-        "Use the following pieces of retrieved context to answer "
-        "the question. If you don't know the answer, say that you "
-        "don't know. Use three sentences maximum and keep the "
-        "answer concise."
+        "You are an expert about electrical design. Give me answer in short and simple words."
+        "No need to give any explanation. Don't give any extra information."
+        "You are filling Specification summary sheet of a electrical design project."
+        "If answer is expected from given options, then give answer from given options only." 
+        "This data is needed to be filled in excel sheet."
+        # "If you don't know the answer, then say 'NA'."
+        "Try to match with the options if given in prompt"
         "\n\n"
         "{context}"
     )

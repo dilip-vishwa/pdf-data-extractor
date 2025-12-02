@@ -80,7 +80,7 @@ def get_validation_map(wb, ws):
     return validation_map
 
 if __name__ == "__main__":
-    file_path = "/home/adming/project/find_excel_data_fill_label/SPECIFICATION_SUMMARY_SHEET-BLANK.xlsx"
+    file_path = "/home/adming/project/pdf-data-extractor/dataset/SPECIFICATION_SUMMARY_SHEET-BLANK.xlsx"
     wb = openpyxl.load_workbook(file_path)
     ws = wb.active
     validation_map = get_validation_map(wb, ws)

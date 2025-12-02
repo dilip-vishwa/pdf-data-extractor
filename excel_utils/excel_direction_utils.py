@@ -1,4 +1,4 @@
-from excel_utils.excel_color_utils import check_if_given_cell_is_text_or_green_or_empty
+from excel_utils.excel_style_utils.excel_color_utils import check_if_given_cell_is_text_or_green_or_empty
 from openpyxl.cell.cell import Cell
 
 label_already_parsed = []

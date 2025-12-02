@@ -131,5 +131,5 @@
 #         return []
 
 # if __name__ == "__main__":
-#     file_path = "/home/adming/project/find_excel_data_fill_label/SPECIFICATION_SUMMARY_SHEET-BLANK.xlsx"
+#     file_path = "/home/adming/project/pdf-data-extractor/dataset/SPECIFICATION_SUMMARY_SHEET-BLANK.xlsx"
 #     find_green_cell_labels(file_path)

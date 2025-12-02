@@ -7,7 +7,6 @@ def get_colored_cells(sheet, target_color_hex="FFE2EFD9"):
             if cell.fill and cell.fill.start_color and cell.fill.start_color.rgb == target_color_hex:
                 green_cells.append(cell)
                 
-    # print(f"Found {len(green_cells)} green cells.")
     return green_cells
 
 def check_if_cell_is_colored(cell, target_color_hex="FFE2EFD9"):

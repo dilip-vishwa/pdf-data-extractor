@@ -22,5 +22,5 @@
 
 # if __name__ == "__main__":
 #     # Using the filename found in the previous list_dir
-#     file_path = "/home/adming/project/find_excel_data_fill_label/SPECIFICATION_SUMMARY_SHEET-BLANK.xlsx"
+#     file_path = "/home/adming/project/pdf-data-extractor/dataset/SPECIFICATION_SUMMARY_SHEET-BLANK.xlsx"
 #     inspect_colors(file_path)

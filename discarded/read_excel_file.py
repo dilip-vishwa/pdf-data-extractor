@@ -106,8 +106,8 @@ def read_validation_data_new(excel_file_path):
 
 
 if __name__ == "__main__":
-    # excel_file_path = "/home/adming/project/pdf-data-extractor/SPECIFICATION_SUMMARY_SHEET-BLANK.xlsx"
-    excel_file_path = "/home/adming/project/pdf-data-extractor/SPECIFICATION_SUMMARY_SHEET-BLANK.xlsx"
+    # excel_file_path = "/home/adming/project/pdf-data-extractor/dataset/SPECIFICATION_SUMMARY_SHEET-BLANK.xlsx"
+    excel_file_path = "/home/adming/project/pdf-data-extractor/dataset/SPECIFICATION_SUMMARY_SHEET-BLANK.xlsx"
     # df = read_excel_file_and_create_a_pandas_dataframe(excel_file_path)
     # print(df)
     # read_excel_file_using_openpyxl(excel_file_path)
